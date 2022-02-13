@@ -5,12 +5,16 @@ const addTask=function(description,dueTime=false){
     li1.innerText=description+" ";
     task.appendChild(li1);
     
-    span1=document.createElement("span");
-    span1.setAttribute("class","due");
-    let dueTime_date=new Date(dueTime);
-    dueTime_date=dueTime_date.toLocaleString("en-US");
-    span1.innerText="due "+(dueTime?dueTime_date:"");
-    li1.appendChild(span1);
+    if (dueTime){
+        span1=document.createElement("span");
+        span1.setAttribute("class","due");
+        let dueTime_date=new Date(dueTime);
+        dueTime_date=dueTime_date.toLocaleString("en-US");
+        dueTime_date=dueTime_date.replace(","," ");
+        span1.innerText="due "+(dueTime?dueTime_date:"");
+        li1.appendChild(span1);
+    }
+    
     button1=document.createElement("button")
     button1.setAttribute("class","btn btn-sm btn-outline-danger done");
     button1.setAttribute("type","button");
