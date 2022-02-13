@@ -1,18 +1,12 @@
-// const removeitem=function(btn){
-//     btn.addEventListener('click',(e)=>{
-//         btn.parentElement.remove();
-//     })
-// }
-
 
 const addTask=function(description,dueTime=false){
     task=document.querySelector('ul#task_list');
     li1=document.createElement("li");
-    li1.innerText=description
+    li1.innerText=description+" ";
     task.appendChild(li1);
     
     span1=document.createElement("span");
-    span1.setAttribute("id","due");
+    span1.setAttribute("class","due");
     let dueTime_date=new Date(dueTime);
     dueTime_date=dueTime_date.toLocaleString("en-US");
     span1.innerText="due "+(dueTime?dueTime_date:"");
@@ -26,7 +20,7 @@ const addTask=function(description,dueTime=false){
 }
 
 addTask("Learn to wrap gifts", 1639944400000);
-addTask("Code in javascript", 16399444000100);
+addTask("Code in javascript", 1639944400010);
 
 function dateAndTimeToTimestamp(dateInputElement, timeInputElement) {
     console.log(dateInputElement,timeInputElement);
@@ -66,24 +60,6 @@ description.addEventListener("keydown",(e)=>{
         updatetask();
     }
 })
-
-// let lilist=document.querySelectorAll("ul li");
-
-// for(let i=0;i<document.querySelectorAll("ul li").length;i++){
-//     document.querySelectorAll("ul li")[i].querySelector('button.done').addEventListener('click',function(){
-//         console.log(i);
-//         document.querySelectorAll("ul li")[i].remove();
-//     })
-// }
-
-
-
-// let btnlist=document.querySelectorAll("button.done");
-// for(let i=0;i<btnlist.length;i++){
-//     btnlist[i].addEventListener('click',function(){
-//         btnlist[i].parentElement.remove();
-//     })
-// }
 
 
 // document.querySelectorAll("button.done").forEach(btn=>{
